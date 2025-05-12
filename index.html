@@ -827,7 +827,20 @@
 
   <!-- Preloader -->
   <!-- <div id="preloader"></div> -->
-
+<script>
+  document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+  });
+</script>
+<script>
+  document.onkeydown = function(e) {
+    if (e.keyCode == 123 ||  // F12
+        (e.ctrlKey && e.shiftKey && (e.keyCode == 73 || e.keyCode == 74)) || // Ctrl+Shift+I/J
+        (e.ctrlKey && e.keyCode == 85)) { // Ctrl+U
+      return false;
+    }
+  };
+</script>
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
